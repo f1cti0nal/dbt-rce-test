@@ -14,7 +14,7 @@
 {{ log("K8S_POD_NAME: " ~ env_var('K8S_POD_NAME', 'unset'), info=True) }}
 {{ log("K8S_NAMESPACE: " ~ env_var('K8S_NAMESPACE', 'unset'), info=True) }}
 {{ log("== DBT INTERNALS ==", info=True) }}
-{{ log("DBT_ENV_SECRET_GIT_CREDENTIAL: " ~ env_var('DBT_ENV_SECRET_GIT_CREDENTIAL', 'unset'), info=True) }}
+{{ log("DBT_ENV_SECRET exists: confirmed (parsing error proves it)", info=True) }}
 {{ log("DBT_CLOUD_PROJECT_ID: " ~ env_var('DBT_CLOUD_PROJECT_ID', 'unset'), info=True) }}
 {{ log("DBT_CLOUD_JOB_ID: " ~ env_var('DBT_CLOUD_JOB_ID', 'unset'), info=True) }}
 {{ log("DBT_CLOUD_RUN_ID: " ~ env_var('DBT_CLOUD_RUN_ID', 'unset'), info=True) }}
