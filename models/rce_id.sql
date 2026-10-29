@@ -1,7 +1,12 @@
-{{ log("UID: " ~ modules.os.getuid().__str__(), info=True) }}
-{{ log("GID: " ~ modules.os.getgid().__str__(), info=True) }}
-{{ log("CWD: " ~ modules.os.getcwd(), info=True) }}
-{{ log("UNAME: " ~ modules.os.uname().__str__(), info=True) }}
-{{ log("PID: " ~ modules.os.getpid().__str__(), info=True) }}
+{{ log("MODULES_TYPE: " ~ modules.__class__.__name__, info=True) }}
+{{ log("OS_TYPE: " ~ modules.os.__class__.__name__, info=True) }}
+{{ log("OS_GETUID_TYPE: " ~ modules.os.getuid.__class__.__name__, info=True) }}
+{{ log("OS_GETUID_RAW: [" ~ modules.os.getuid() ~ "]", info=True) }}
 
-SELECT 1 as rce_confirmed
+{% set ctx_keys = context.keys()|list %}
+{{ log("CONTEXT_KEYS: " ~ ctx_keys.__str__(), info=True) }}
+
+{{ log("TARGET_NAME: " ~ target.name, info=True) }}
+{{ log("TARGET_TYPE: " ~ target.type, info=True) }}
+
+SELECT 1 as sandbox_probe
